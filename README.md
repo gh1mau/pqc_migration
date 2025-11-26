@@ -1,80 +1,100 @@
 # 🛡️ PQC Migration Readiness Toolkit (Unofficial)
 
-Welcome to the **PQC Migration Readiness Toolkit (Unofficial)** — a simple but practical toolkit created to help teams understand where they stand before moving into the world of Post-Quantum Cryptography (PQC).
+A practical, research-friendly toolkit designed to help teams prepare for Post-Quantum Cryptography (PQC) migration.  
+This project focuses on the biggest challenge in PQC transition: **visibility** — knowing what cryptography you have, where it lives, and how ready it is for PQC-era threats.
 
-This project focuses on the *visibility problem* — because you can’t secure what you don’t know you have.  
-The toolkit helps you discover cryptographic services, identify what algorithms are being used, and prepare the groundwork for a full PQC migration plan.
-
-This repository is inspired by insights shared during the  
-**“Bengkel Migrasi Post-Quantum Cryptography (PQC) Tahun 2025 Siri 10”**  
-organized by **NACSA (National Cyber Security Agency)** and **PTPKM**.  
-This project is **not official**, **not endorsed**, and **not associated** with these organizations — just something built to help learning and exploration.
+Inspired by insights from the  
+**“Bengkel Migrasi Post-Quantum Cryptography (PQC) Tahun 2025 Siri 10”** organized by **NACSA** and **PTPKM**.  
+This toolkit is **not official**, **not endorsed**, and **not affiliated** with these organizations.
 
 ---
 
 ## ⚠️ Disclaimer
 
-This toolkit is **unofficial** and provided strictly **as-is**.  
-There is **no warranty**, no support, and the authors are **not responsible** for any damage, data loss, downtime, or issues that may occur from using this toolkit.
+This toolkit is **unofficial**, provided **as-is**, and intended **for educational and research purposes only**.  
+The authors take **no responsibility** for any system issues, downtime, misconfiguration, or damages arising from its use.
 
-It is meant **for educational and research purposes only**.
-
-Please do not use this toolkit on networks or systems you do not own or do not have permission to scan.  
+Only scan systems you own or are authorized to test.  
 Use responsibly.
 
 ---
 
 ## 📖 Introduction
 
-Cryptography today relies heavily on classical algorithms like RSA and ECC.  
-As quantum computers grow more capable, these algorithms will eventually become breakable — a threat often called **“Harvest Now, Decrypt Later”**.
+Quantum computing will eventually break today’s widely used cryptographic algorithms such as RSA and ECC — a risk commonly described as **“Harvest Now, Decrypt Later.”**  
+Because of this, organizations must start planning their migration to **Post-Quantum Cryptography (PQC)**.
 
-To prepare for this future, organizations must migrate to **Post-Quantum Cryptography (PQC)**.  
-The challenge? Migration is not as simple as switching an algorithm. It requires understanding your entire cryptographic landscape — from certificates and TLS settings to SSH configurations, middleware, libraries, and backend systems.
+But PQC migration is not just “change the algorithm.” It requires understanding your environment:
 
-The hardest step is the first one: **visibility**.
+- What cryptographic protocols and services exist?
+- What software components depend on them?
+- How ready (or outdated) are those services?
+- What is the impact of replacing classical crypto with PQC?
+- Which assets require deeper analysis (SBOM/CBOM)?
+- How much risk does each asset carry?
 
-This toolkit focuses on solving that first hurdle:
+This toolkit introduces a simple, structured methodology to support that journey.  
+Across all phases, the goal is to make PQC migration **clearer, measurable, and actionable**.
 
-- Discover what cryptographic services exist  
-- Identify software versions  
-- Enumerate algorithms and protocol support  
-- Highlight potential weaknesses  
-- Build a clean inventory that feeds into PQC migration planning  
+### **Scope of This Toolkit**
+The toolkit covers the following areas:
 
-This is **Phase 1** of a bigger migration methodology — and more phases will be added as the toolkit grows.
+#### **1. Inventory & Discovery**
+- Network-facing crypto services  
+- TLS/SSL versions and cipher suites  
+- SSH algorithms and host key formats  
+- Software versions and service fingerprints  
+
+#### **2. SBOM (Software Bill of Materials)**
+- Identifying libraries, dependencies, and crypto-relevant packages  
+- Mapping components to PQC compatibility  
+
+#### **3. CBOM (Cryptographic Bill of Materials)**
+- Highlighting cryptographic primitives inside applications  
+- Listing what algorithms, key sizes, or libraries are in use  
+
+#### **4. Risk Register**
+- Mapping all findings into a security and migration risk register  
+- Categorizing assets based on sensitivity and exposure  
+
+#### **5. Risk Assessment**
+- Assigning risk levels  
+- Identifying priority assets for PQC migration  
+- Generating recommendations for future phases  
+
+This project starts with **Phase 1**, with more phases being developed over time.
 
 ---
 
 ## 📚 Table of Contents
 
-### 🔹 **Project Pages**
-- [Phase 1 — Discovery & Inventory](./phase1.md)
-- [Phase 2 — SBOM/CBOM Deep Analysis](./phase2.md)
-- [Phase 3 — PQC Compatibility Evaluation](./phase3.md)
-- [Phase 4 — Migration Planning & Roadmap](./phase4.md)
+### 🔹 Project Documentation
+- [Phase 1 — Discovery & Inventory](./phase1.md)  
+- [Phase 2 — SBOM/CBOM Deep Analysis](./phase2.md)  
+- [Phase 3 — PQC Compatibility Evaluation](./phase3.md)  
+- [Phase 4 — Migration Planning & Roadmap](./phase4.md)  
 
-### 🔹 **General**
-- [About This Project](#-pqc-migration-readiness-toolkit-unofficial)
-- [Disclaimer](#-disclaimer)
-- [Introduction](#-introduction)
-- [Authors & Contributors](#authors--contributors)
-- [License](#license)
+### 🔹 General Information
+- [About the Project](#-pqc-migration-readiness-toolkit-unofficial)  
+- [Introduction](#-introduction)  
+- [Disclaimer](#-disclaimer)  
+- [Authors & Contributors](#authors--contributors)  
+- [License](#license)  
 
 ---
 
 ## 📦 About This Repository
 
-This repo stores:
+This repository contains:
 
-- The core scanning scripts  
-- Documentation for each migration phase  
-- CSV inventory output samples  
-- Log examples  
-- Diagrams and workflow references  
-- Future tools for SBOM/CBOM extraction and PQC readiness scoring  
+- Core scripts for scanning and inventory  
+- Documentation for each PQC migration phase  
+- Example outputs (CSV, logs, diagrams)  
+- Draft workflows for SBOM/CBOM analysis  
+- Early-stage tools for risk scoring and readiness assessment  
 
-The goal is to keep everything simple, readable, and usable in real environments.
+The design philosophy is simple:
+> **Readable, practical, and usable in real environments.**
 
 ---
 
@@ -90,20 +110,20 @@ The goal is to keep everything simple, readable, and usable in real environments
 
 ## 📜 License
 
-This project uses the **MIT License**, which allows reuse while protecting contributors with a clear **no-warranty** clause.
+This project uses the **MIT License**, which allows reuse and modification while clearly stating **no warranty**.
 
 ---
 
 ## 🤝 Contributions
 
-This is a learning-focused project.  
-If you want to improve the scripts, add new checks, write documentation, or simply share ideas — contributions are welcome.
+This is a learning-focused and community-friendly project.  
+Pull requests, ideas, and improvements are welcome — especially enhancements for PQC scanning and SBOM/CBOM automation.
 
 ---
 
 ## ⭐ Support the Project
 
-If you find this useful or interesting, feel free to star the repo.  
-It helps others discover the toolkit and encourages ongoing development.
+If this project helps you or sparks your curiosity, feel free to star the repo.  
+Your support helps keep the development moving forward.
 
 ---
