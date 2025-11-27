@@ -41,8 +41,7 @@ Using Nmap, the tool scans specifically for ports associated with cryptographic 
 | **636** | LDAPS | TLS handshake |
 | **993 / 995** | Secure IMAP/POP3 | TLS handshake |
 
-The objective isn’t to discover every port —  
-it’s to discover **crypto-relevant ports** that play a role in PQC migration.
+The objective isn’t to discover every port, it’s to discover **crypto-relevant ports** that play a role in PQC migration.
 
 ### **3. Service Enumeration**
 
@@ -140,6 +139,62 @@ Below is the description of each column:
 | **SBOM/CBOM Available?**       | Default `No`. Indicates whether a deeper SBOM/CBOM scan has been done (Phase 2). |
 | **Migration Readiness Level**  | Automated assessment of migration readiness (Low, Medium, High). For example, presence of RC4 → Low. |
 | **Notes / Action Items**       | Recommendations or observations from the scanner. Example: "TLS Service detected. Deep scan recommended with testssl.sh." |
+
+---
+
+## 🛠️ How to Use the Tool
+
+The `scan_pqc_phase_1.sh tool` is a wrapper for powerful scanners like Nmap and TestSSL. It handles all the complex commands for you.
+
+
+### Prerequisites
+
+- You need a Linux environment with `nmap` installed.
+- Nmap installed (sudo apt install nmap).
+
+
+### 1. Basic Usage
+
+Run the script with `sudo` (root is needed for accurate OS fingerprinting).
+
+**Syntax:**
+
+```bash
+sudo ./scan_pqc_phase_1.sh <TARGET> "<LOCATION_NAME>"
+
+### 2. Command Options & Examples
+
+| Scenario             | Command |
+|---------------------|---------|
+| Scan a Single Server | `sudo ./scan_pqc_phase_1.sh 192.168.1.50 "Server Room A"` |
+| Scan a Whole Subnet  | `sudo ./scan_pqc_phase_1.sh 10.55.0.0/24 "Pusat Data Kg Ismail"` |
+
+---
+
+## 📸 Screenshots & Proof of Concept
+
+### 1. Scanning in Progress
+The tool displays a clean status dashboard, hiding the messy Nmap output behind the scenes.  
+
+*sc1*
+
+
+
+### 2. Final Output
+A success message indicating the CSV generation is complete.  
+
+*sc2*
+
+
+
+### 3. Video Demo
+See the tool in action scanning a live environment.  
+
+poc1
+
+---
+
+[Return to Top](#)
 
 
 
