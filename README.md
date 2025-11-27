@@ -112,7 +112,7 @@ This parser takes all the scan results and turns them into clean, organized repo
 ## 👥 Authors & Contributors
 
 **Author:** Hussein Bin Mohamed - masta ghimau  
-**Contributor:** Mohd Saufy **PTPKM** (Output Review, report validation)
+**Contributor:** Mohd Saufy **PTPKM** (Output review, report validation)
 
 ---
 
