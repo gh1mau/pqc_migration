@@ -137,7 +137,7 @@ graph TD
     
     collect_data --> generate_csv[Generate 'pqc_inventory_output.csv']
     generate_csv --> finish([End Phase 1])
-
+```
 
 ## 📊 Data Dictionary: What the Data Means
 
@@ -154,6 +154,7 @@ Below is the description of each column:
 | **SBOM/CBOM Available?**       | Default `No`. Indicates whether a deeper SBOM/CBOM scan has been done (Phase 2). |
 | **Migration Readiness Level**  | Automated assessment of migration readiness (Low, Medium, High). For example, presence of RC4 → Low. |
 | **Notes / Action Items**       | Recommendations or observations from the scanner. Example: "TLS Service detected. Deep scan recommended with testssl.sh." |
+
 
 
 
