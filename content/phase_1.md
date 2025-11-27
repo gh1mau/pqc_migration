@@ -144,13 +144,13 @@ Below is the description of each column:
 
 ## 🛠️ How to Use the Tool
 
-The `scan_pqc_phase_1.sh tool` is a wrapper for powerful scanners like Nmap and TestSSL. It handles all the complex commands for you.
+The `pqc_scanner_phase1 tool` is a wrapper for powerful scanners like Nmap and TestSSL. It handles all the complex commands for you.
 
 
 ### Prerequisites
 
 - You need a Linux environment with `nmap` installed.
-- Nmap installed (sudo apt install nmap).
+- Nmap installed (`sudo apt install nmap`).
 
 
 ### 1. Basic Usage
@@ -160,15 +160,17 @@ Run the script with `sudo` (root is needed for accurate OS fingerprinting).
 **Syntax:**
 
 ```bash
-sudo ./scan_pqc_phase_1.sh <TARGET> "<LOCATION_NAME>"
+sudo chmod +x pqc_scanner_phase1
+sudo ./pqc_scanner_phase1 
 ```
+sc1
 
 ### 2. Command Options & Examples
 
 | Scenario             | Command |
 |---------------------|---------|
-| Scan a Single Server | `sudo ./scan_pqc_phase_1.sh 192.168.1.50 "Server Room A"` |
-| Scan a Whole Subnet  | `sudo ./scan_pqc_phase_1.sh 10.55.0.0/24 "Pusat Data Kg Ismail"` |
+| Scan a Single Server | `sudo ./pqc_scanner_phase1 192.168.1.50 "Server Room A"` |
+| Scan a Whole Subnet  | `sudo ./pqc_scanner_phase1 10.55.0.0/24 "Pusat Data Kg Ismail"` |
 
 ---
 
@@ -177,14 +179,14 @@ sudo ./scan_pqc_phase_1.sh <TARGET> "<LOCATION_NAME>"
 ### 1. Scanning in Progress
 The tool displays a clean status dashboard, hiding the messy Nmap output behind the scenes.  
 
-*sc1*
+*sc3*
 
 
 
 ### 2. Final Output
 A success message indicating the CSV generation is complete.  
 
-*sc2*
+*sc4*
 
 
 
@@ -200,9 +202,21 @@ poc1
 The tool has been tested on the following environment:
 
 ```text
-Ubuntu 24.04.2 LTS
+- Ubuntu 24.04.2 LTS
+- WSL version: 2.6.1.0 (Kali GNU/Linux Rolling 2025.2)
+```
+
+## 🔍 VirusTotal Scan Results
+
+You can view the scan result for the compiled binary here:
+
+[VirusTotal Report for pqc_scanner_phase1](https://www.virustotal.com/gui/file/89f48cfc567e412a9e725c608f7dd3bdadd788c42f314a5bd430615c1922f946?nocache=1)
+
+> 🔗 Click the link above to see how many antivirus engines flagged the file as malicious (if any). VirusTotal aggregates reports from many engines to give a consensus result. :contentReference[oaicite:1]{index=1}
+
 
 [Return to Top](#)
+
 
 
 
