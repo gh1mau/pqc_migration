@@ -1,11 +1,10 @@
 # 🛡️ PQC Migration Readiness Toolkit (Unofficial)
 
 A practical and research-friendly toolkit built to help teams prepare for Post-Quantum Cryptography (PQC) migration.  
-The main goal of this project is to give you clear visibility of your cryptographic landscape — what algorithms you are using, where they live, and how ready they are for future PQC requirements.
+The main goal of this project is to give you clear visibility of your cryptographic landscape. What algorithms you are using, where they live, and how ready they are for future PQC requirements.
 
 This toolkit was inspired by ideas and discussions from the  
-**“Bengkel Migrasi Post-Quantum Cryptography (PQC) Tahun 2025 Siri 10”**  
-organized by **NACSA** and **PTPKM**.
+**“Bengkel Migrasi Post-Quantum Cryptography (PQC) Tahun 2025 Siri 10”** organized by **NACSA** and **PTPKM(Pusat Teknologi dan Pengurusan Kriptologi Malaysia)**.
 
 This project is **not official**, **not endorsed**, and **not affiliated** with these organizations.
 
@@ -14,10 +13,10 @@ This project is **not official**, **not endorsed**, and **not affiliated** with 
 ## ⚠️ Disclaimer
 
 This toolkit is **unofficial** and provided **as-is** for educational and research purposes only.  
-The authors are **not responsible** for downtime, data loss, misconfiguration, or any damage caused by using these tools.
 
-Scan only systems that you own or have permission to test.  
-Use responsibly.
+I (Hussein bin Mohamed – masta ghimau) am not responsible for any system downtime, data loss, misconfiguration, or any damage resulting from the use of these tools and the methodology provided.
+
+Scan only systems that you own or have permission to test. Use responsibly.
 
 ---
 
