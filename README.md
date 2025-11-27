@@ -67,7 +67,7 @@ After identifying key assets, this phase provides a detailed analysis of the sys
 - **OS Scan:** Uses `mini-pqc-scanner` to check kernel, OpenSSL, and crypto libraries  
 - **SBOM:** Uses **Syft** to list installed packages and dependencies  
 - **Vulnerability Scan:** Uses **Grype** to match SBOM components to known CVEs  
-- **CBOM:** Uses **Semgrep** with my custom rules (pqc-php-rules.yml) to detect specific crypto usage in source code—e.g., md5(), password_hash(), openssl_encrypt().
+- **CBOM:** Uses **Semgrep** with my custom rules (pqc-php-rules.yml) to detect specific crypto usage in source code (e.g., md5(), password_hash(), openssl_encrypt()).
 
 ---
 
