@@ -3,8 +3,7 @@
 A practical and research-friendly toolkit built to help teams prepare for Post-Quantum Cryptography (PQC) migration.  
 The main goal of this project is to give you clear visibility of your cryptographic landscape. What algorithms you are using, where they live, and how ready they are for future PQC requirements.
 
-This toolkit was inspired by ideas and discussions from the  
-**“Bengkel Migrasi Post-Quantum Cryptography (PQC) Tahun 2025 Siri 10”** organized by **NACSA** and **PTPKM(Pusat Teknologi dan Pengurusan Kriptologi Malaysia)**.
+This toolkit was inspired by ideas and discussions from the **“Bengkel Migrasi Post-Quantum Cryptography (PQC) Tahun 2025 Siri 10”** organized by **NACSA** and **PTPKM(Pusat Teknologi dan Pengurusan Kriptologi Malaysia)**.
 
 This project is **not official**, **not endorsed**, and **not affiliated** with these organizations.
 
@@ -22,7 +21,8 @@ Scan only systems that you own or have permission to test. Use responsibly.
 
 ## 📖 Introduction
 
-Quantum computing is expected to break many of today’s widely used cryptographic algorithms — especially RSA and ECC.  
+Quantum computing is expected to break many of today’s widely used cryptographic algorithms especially RSA and ECC.  
+
 This risk is often described as **“Harvest Now, Decrypt Later”**, where attackers collect encrypted data today and decrypt it in the future once quantum computers become strong enough.
 
 Because of this, organizations need to start planning their journey towards **Post-Quantum Cryptography (PQC)**.  
@@ -36,14 +36,14 @@ But migrating to PQC is not as simple as replacing one algorithm with another. Y
 - How much risk is carried by each asset?
 
 This toolkit provides a simple and structured way to answer those questions.  
-Each phase is designed to make PQC migration **clear**, **measurable**, and **actionable** — even for teams that are just getting started.
+
+Each phase is designed to make PQC migration **clear**, **measurable**, and **actionable**. Even for teams that are just getting started.
 
 ---
 
 ## 📦 Scope of This Toolkit
 
-This project automates the early stages of PQC migration:  
-**inventory, analysis, and risk assessment.**
+This project automates the early stages of PQC migration:  (**inventory, analysis, and risk assessment.**)
 
 ### **1. Inventory & Discovery (Phase 1)**  
 **Tool:** `scan_pqc_phase_1.sh`  
