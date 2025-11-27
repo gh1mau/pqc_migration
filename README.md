@@ -43,51 +43,53 @@ Each phase is designed to make PQC migration **clear**, **measurable**, and **ac
 
 ## 📦 Scope of This Toolkit
 
-This project automates the early stages of PQC migration:  (**inventory, analysis, and risk assessment.**)
+This project automates the early stages of PQC migration: inventory, analysis, and risk assessment. It specifically covers the following tools and functionalities based on the scripts provided:
 
 ### **1. Inventory & Discovery (Phase 1)**  
 **Tool:** `scan_pqc_phase_1.sh`  
-This script scans your network to map out all active services and identify the cryptographic protocols they use.
+This script acts as your network scout. It scans your network to map out all active services and identify the cryptographic protocols they use.
 
 **What it does:**
 
 - Scans for SSH, TLS/SSL, RDP, and other crypto-heavy services  
 - Uses Nmap and TestSSL to detect versions and algorithms  
 - Performs live handshakes to collect cipher and key exchange details  
-- Generates an easy-to-read **Inventory CSV**
+- Generates an easy-to-read Inventory CSV ready for reporting.
 
 ---
 
 ### **2. Deep Dive Analysis (Phase 2)**  
 **Tool:** `scan_pqc_phase_2.sh`  
-After identifying key assets, this phase provides a detailed analysis of the system or codebase.
+After identifying key assets, this phase provides a detailed analysis of the system or codebase. It combines several powerful engines:
 
 **What it does:**
 
 - **OS Scan:** Uses `mini-pqc-scanner` to check kernel, OpenSSL, and crypto libraries  
 - **SBOM:** Uses **Syft** to list installed packages and dependencies  
 - **Vulnerability Scan:** Uses **Grype** to match SBOM components to known CVEs  
-- **CBOM:** Uses **Semgrep** with custom rules (`pqc-php-rules.yml`) to detect crypto usage in source code  
-  - e.g., `md5()`, `password_hash`, `openssl_encrypt()`
+- **CBOM:** Uses **Semgrep** with my custom rules (pqc-php-rules.yml) to detect specific crypto usage in source code—e.g., md5(), password_hash(), openssl_encrypt().
 
 ---
 
-### **3. Intelligence & Reporting**  
-**Tool:** `parser.py`  
-This script converts raw output into clean, human-friendly reports.
+### **3. Intelligence & Reporting**
+
+**Tool:** `parser.py`
+
+Raw JSON output is useful for machines, but not exactly fun to read.  
+This parser takes all the scan results and turns them into clean, organized reports that you can actually use for decision-making.
 
 **What it does:**
 
-- Combines OS, SBOM, and CBOM findings into unified Excel files  
-- Maps components and services together for easier analysis  
-- Calculates basic PQC-related risk scores  
-- Flags low crypto-agility patterns and hardcoded algorithms  
-- Generates:
-  - **PQC_SBOM.xlsx**  
-  - **PQC_Risk_Register.xlsx**  
-  - **CBOM_Risk_Assessment.xlsx**
-
-These reports are designed to be shared easily with decision-makers and technical teams.
+- Pulls everything together to produce your **SBOM, CBOM, Risk Registers, and Risk Assessments**
+- Merges OS, SBOM, and CBOM data into one place so the relationships between systems, software, and cryptography are easy to follow
+- Tags vulnerable components with the correct **CVE IDs**, so you instantly know what needs attention
+- Calculates PQC-related risk scores and highlights low crypto-agility areas (like hardcoded algorithms)
+- Helps you see the “story” behind the data instead of just raw numbers
+- Generates the following ready-to-use Excel files:
+  - **SBOM.xlsx**
+  - **CBOM.xlsx**
+  - **Risk_Register.xlsx**
+  - **Risk_Assessment.xlsx**
 
 ---
 
@@ -109,8 +111,8 @@ These reports are designed to be shared easily with decision-makers and technica
 
 ## 👥 Authors & Contributors
 
-**Author:** Hussein Bin Mohamed (masta ghimau)  
-**Contributor:** Mohd Saufy
+**Author:** Hussein Bin Mohamed - masta ghimau  
+**Contributor:** Mohd Saufy **PTPKM** (Output Review, report validation)
 
 ---
 
