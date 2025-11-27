@@ -114,6 +114,7 @@ This helps prioritize which systems need deeper analysis.
 
 <details>
 <summary>📈 Process Flowchart</summary>
+</details>
 
 ```mermaid
 graph TD
@@ -139,5 +140,6 @@ graph TD
     
     collect_data --> generate_csv[Generate 'pqc_inventory_output.csv']
     generate_csv --> finish([End Phase 1])
-</details>
+
+
 
