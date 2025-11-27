@@ -210,12 +210,13 @@ The tool has been tested on the following environment:
 
 You can view the scan result for the compiled binary here:
 
-[VirusTotal Report for pqc_scanner_phase1](https://www.virustotal.com/gui/file/89f48cfc567e412a9e725c608f7dd3bdadd788c42f314a5bd430615c1922f946?nocache=1)
+[VirusTotal Report(https://www.virustotal.com/gui/file/89f48cfc567e412a9e725c608f7dd3bdadd788c42f314a5bd430615c1922f946?nocache=1)
 
-> 🔗 Click the link above to see how many antivirus engines flagged the file as malicious (if any). VirusTotal aggregates reports from many engines to give a consensus result. :contentReference[oaicite:1]{index=1}
+
 
 
 [Return to Top](#)
+
 
 
 
