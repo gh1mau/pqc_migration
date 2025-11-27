@@ -46,7 +46,7 @@ Each phase is designed to make PQC migration **clear**, **measurable**, and **ac
 This project automates the early stages of PQC migration: inventory, analysis, and risk assessment. It specifically covers the following tools and functionalities based on the scripts provided:
 
 ### **1. Inventory & Discovery (Phase 1)**  
-**Tool:** `scan_pqc_phase_1.sh`  
+**Tool:** `pqc_scanner_phase1`  
 This script acts as your network scout. It scans your network to map out all active services and identify the cryptographic protocols they use.
 
 **What it does:**
