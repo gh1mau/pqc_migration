@@ -11,8 +11,9 @@ Before diving into source code, libraries, or kernel-level cryptographic setting
 
 **What services are exposed, and what cryptography do they rely on?**
 
-This phase identifies exposed interfaces, the protocols they advertise, and the cryptographic algorithms they negotiate.  
-The results from this phase map directly to **Table 0: Initial Inventory** in the PQC Migration Workbook, forming the foundation for Phase 2 and beyond.
+This phase identifies exposed interfaces, the protocols they advertise, and the cryptographic algorithms they negotiate. 
+
+The results from this phase provide the foundation for subsequent phases, serving as the initial inventory of assets and information.
 
 ---
 
@@ -29,7 +30,7 @@ You tell the tool where to look:
 - A **single IP** (e.g., a server or appliance), or  
 - A **subnet range** (e.g., an entire VLAN)
 
-You also assign a **Location/Owner tag** (e.g., “Server Room A”), which helps link assets to physical or logical context in later reporting.
+You also assign a **Location/Owner tag** (e.g., “Pusat Data Kg Ismail”), which helps link assets to physical or logical context in later reporting.
 
 ---
 
@@ -45,8 +46,7 @@ Using Nmap, the tool scans specifically for ports associated with cryptographic 
 | **636** | LDAPS | TLS handshake |
 | **993 / 995** | Secure IMAP/POP3 | TLS handshake |
 
-The objective isn’t to discover every port —  
-it’s to discover **crypto-relevant ports** that play a role in PQC migration.
+The objective isn’t to discover every port, it’s to discover **crypto-relevant ports** that play a role in PQC migration.
 
 ---
 
@@ -134,3 +134,4 @@ graph TD
     
     collect_data --> generate_csv[Generate 'pqc_inventory_output.csv']
     generate_csv --> finish([End Phase 1])
+
