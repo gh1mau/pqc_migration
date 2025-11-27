@@ -195,7 +195,15 @@ poc1
 
 ---
 
+## ✅ Tested On
+
+The tool has been tested on the following environment:
+
+```text
+Ubuntu 24.04.2 LTS
+
 [Return to Top](#)
+
 
 
 
