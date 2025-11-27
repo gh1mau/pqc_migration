@@ -161,6 +161,7 @@ Run the script with `sudo` (root is needed for accurate OS fingerprinting).
 
 ```bash
 sudo ./scan_pqc_phase_1.sh <TARGET> "<LOCATION_NAME>"
+```
 
 ### 2. Command Options & Examples
 
@@ -195,6 +196,7 @@ poc1
 ---
 
 [Return to Top](#)
+
 
 
 
