@@ -7,8 +7,6 @@
 
 > Automated inventory scanning tool to detect exposed crypto-enabled services and assess migration readiness.
 
----
-
 ## 📡 Introduction
 
 Phase 1 uses an **"Outside-In"** approach. Before diving into source code or kernel configs, we first discover what is externally exposed. This phase identifies open network interfaces and the cryptographic protocols they are using.
@@ -21,8 +19,6 @@ This initial inventory forms the foundation for all subsequent phases of migrati
 ## 🔄 The Methodology (How It Works)
 
 Phase 1 uses a structured, step-by-step discovery flow to minimize blind spots and ensure accuracy.
-
----
 
 ### **1. Target Acquisition**
 
@@ -147,13 +143,14 @@ Below is the description of each column:
 | Column Name                   | Description |
 |--------------------------------|-------------|
 | **Asset Type**                 | Type of asset (e.g., Application Stack, Operating System). The scanner infers this from the port scanned (e.g., Port 22 → OS/Application). |
-| **Asset Name / Identifier**    | Unique ID for the asset. Combines IP Address, Service Name, and Software Version. Example: `10.55.2.7 - ssh (OpenSSH 8.9p1 Ubuntu)` |
-| **Location / Owner**           | Physical location of the asset (e.g., "Server Room A"). Provided by the user during scan. |
+| **Asset Name / Identifier**    | Unique ID for the asset. Combines IP Address, Service Name, and Software Version. Example: `10.10.10.7 - ssh (OpenSSH 8.9p1 Ubuntu)` |
+| **Location / Owner**           | Physical location of the asset (e.g., "Pusat Data Kg. Ismail"). Provided by the user during scan. |
 | **Cryptographic Functionality Present?** | Yes/No. Since the tool only scans crypto-enabled ports (22, 443, etc.), this is usually "Yes". |
 | **Examples of Algorithms Used** | Cryptographic algorithms detected during handshake. Example: RSA, ECDHE, AES-GCM. |
 | **SBOM/CBOM Available?**       | Default `No`. Indicates whether a deeper SBOM/CBOM scan has been done (Phase 2). |
 | **Migration Readiness Level**  | Automated assessment of migration readiness (Low, Medium, High). For example, presence of RC4 → Low. |
 | **Notes / Action Items**       | Recommendations or observations from the scanner. Example: "TLS Service detected. Deep scan recommended with testssl.sh." |
+
 
 
 
