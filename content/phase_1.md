@@ -29,8 +29,6 @@ You tell the tool where to look:
 
 You also assign a **Location/Owner tag** (e.g., “Server Room A”), which helps link assets to physical or logical context in later reporting.
 
----
-
 ### **2. Port Discovery**
 
 Using Nmap, the tool scans specifically for ports associated with cryptographic services (“crypto-heavy ports”):
@@ -46,8 +44,6 @@ Using Nmap, the tool scans specifically for ports associated with cryptographic 
 The objective isn’t to discover every port —  
 it’s to discover **crypto-relevant ports** that play a role in PQC migration.
 
----
-
 ### **3. Service Enumeration**
 
 Once a crypto-relevant port is found, the script extracts:
@@ -57,8 +53,6 @@ Once a crypto-relevant port is found, the script extracts:
 - Protocol type (SSH, TLS/SSL, RDP, etc.)
 
 This version fingerprint is critical because older versions often indicate deprecated or weak algorithm usage.
-
----
 
 ### **4. Active Interrogation (Handshake Stage)**
 
@@ -90,8 +84,6 @@ If `testssl.sh` is available, a real handshake is performed to identify:
 
 If TestSSL is missing, the scanner falls back to Nmap’s SSL scripts.
 
----
-
 ### **5. Migration Readiness Grading**
 
 Each service receives a preliminary PQC-readiness rating:
@@ -104,9 +96,7 @@ Each service receives a preliminary PQC-readiness rating:
 
 This helps prioritize which systems need deeper analysis.
 
-
 ---
-
 ## 📈 Process Flowchart
 
 ```mermaid
@@ -150,6 +140,7 @@ Below is the description of each column:
 | **SBOM/CBOM Available?**       | Default `No`. Indicates whether a deeper SBOM/CBOM scan has been done (Phase 2). |
 | **Migration Readiness Level**  | Automated assessment of migration readiness (Low, Medium, High). For example, presence of RC4 → Low. |
 | **Notes / Action Items**       | Recommendations or observations from the scanner. Example: "TLS Service detected. Deep scan recommended with testssl.sh." |
+
 
 
 
