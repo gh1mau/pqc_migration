@@ -178,7 +178,7 @@ sudo ./pqc_scanner_phase1
 ### 1. Scanning in Progress
 The tool displays a clean status dashboard, hiding the messy Nmap output behind the scenes.  
 
-![Phase 1 Scan Screenshot](./img/phase1_sc1)
+![Phase 1 Scan Screenshot](./img/phase1_sc1.png)
 
 *Figure 1: Example of Phase 1 scan output.*
 
@@ -217,6 +217,7 @@ You can view the scan result for the compiled binary here:
 
 
 [Return to Top](#)
+
 
 
 
