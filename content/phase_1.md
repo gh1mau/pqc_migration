@@ -17,8 +17,8 @@ This initial inventory forms the foundation for all subsequent phases of migrati
 
 ---
 
-<details>
-<summary>🔄 The Methodology (How It Works) (Click to Expand)</summary>
+
+## 🔄 The Methodology (How It Works)
 
 Phase 1 uses a structured, step-by-step discovery flow to minimize blind spots and ensure accuracy.
 
@@ -108,13 +108,10 @@ Each service receives a preliminary PQC-readiness rating:
 
 This helps prioritize which systems need deeper analysis.
 
-</details>
 
 ---
 
-<details>
-<summary>📈 Process Flowchart</summary>
-</details>
+## 📈 Process Flowchart
 
 ```mermaid
 graph TD
@@ -140,6 +137,7 @@ graph TD
     
     collect_data --> generate_csv[Generate 'pqc_inventory_output.csv']
     generate_csv --> finish([End Phase 1])
+
 
 
 
