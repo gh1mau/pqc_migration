@@ -180,14 +180,18 @@ The tool displays a clean status dashboard, hiding the messy Nmap output behind 
 
 ![Phase 1 Scan Screenshot](./img/phase1_sc1.png)
 
-*Figure 1: Example of Phase 1 scan output.*
+*Figure 1: Running the tool without any options will display the help menu by default.*
 
+![Phase 1 Scan Screenshot](./img/phase1_sc2.png)
 
+*Figure 2: Example of Phase 1 scanning single target.*
 
 ### 2. Final Output
 A success message indicating the CSV generation is complete.  
 
-*sc4*
+![Phase 1 Scan Screenshot](./img/phase1_sc3.png)
+
+*Figure 3: After the scan completes, the tool generates the output file **pqc_inventory_output.csv** inside the `reports/` directory. The folder also contains `x.x.x.x_live_hosts.txt`, which lists all discovered live hosts.*
 
 
 
@@ -217,6 +221,7 @@ You can view the scan result for the compiled binary here:
 
 
 [Return to Top](#)
+
 
 
 
