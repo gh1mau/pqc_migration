@@ -13,7 +13,7 @@ This project is **not official**, **not endorsed**, and **not affiliated** with 
 
 This toolkit is **unofficial** and provided **as-is** for educational and research purposes only.  
 
-I (Hussein bin Mohamed – masta ghimau) am not responsible for any system downtime, data loss, misconfiguration, or any damage resulting from the use of these tools and the methodology provided.
+I (**Hussein bin Mohamed – masta ghimau**) am not responsible for any system downtime, data loss, misconfiguration, or any damage resulting from the use of these tools and the methodology provided.
 
 Scan only systems that you own or have permission to test. Use responsibly.
 
