@@ -96,7 +96,7 @@ This parser takes all the scan results and turns them into clean, organized repo
 ## 📚 Table of Contents
 
 ### **Project Documentation**
-- [Phase 1 — Discovery & Inventory](./content/phase1.md) 
+- [Phase 1 — Discovery & Inventory](./content/phase_1.md) 
 - Phase 2 — SBOM/CBOM Deep Analysis  
 - Phase 3 — PQC Compatibility Evaluation (Planned)  
 - Phase 4 — Migration Planning & Roadmap (Planned)
