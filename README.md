@@ -1,4 +1,4 @@
-# 🛡️ PQC Migration Readiness Toolkit (Unofficial)
+#  PQC Migration Readiness Toolkit (Unofficial)
 
 A practical and research-friendly toolkit built to help teams prepare for Post-Quantum Cryptography (PQC) migration.  
 The main goal of this project is to give you clear visibility of your cryptographic landscape. What algorithms you are using, where they live, and how ready they are for future PQC requirements.
@@ -7,7 +7,6 @@ This toolkit was inspired by ideas and discussions from the **“Bengkel Migrasi
 
 This project is **not official**, **not endorsed**, and **not affiliated** with these organizations.
 
----
 
 ## ⚠️ Disclaimer
 
@@ -17,7 +16,7 @@ I (**Hussein bin Mohamed – masta ghimau**) am not responsible for any system d
 
 Scan only systems that you own or have permission to test. Use responsibly.
 
----
+
 
 ## 📖 Introduction
 
@@ -39,7 +38,7 @@ This toolkit provides a simple and structured way to answer those questions.
 
 Each phase is designed to make PQC migration **clear**, **measurable**, and **actionable**. Even for teams that are just getting started.
 
----
+
 
 ## 📦 Scope of This Toolkit
 
@@ -56,7 +55,7 @@ This script acts as your network scout. It scans your network to map out all act
 - Performs live handshakes to collect cipher and key exchange details  
 - Generates an easy-to-read Inventory CSV ready for reporting.
 
----
+
 
 ### **2. Deep Dive Analysis (Phase 2)**  
 **Tool:** `scan_pqc_phase_2.sh`  
@@ -69,7 +68,7 @@ After identifying key assets, this phase provides a detailed analysis of the sys
 - **Vulnerability Scan:** Uses **Grype** to match SBOM components to known CVEs  
 - **CBOM:** Uses **Semgrep** with my custom rules (pqc-php-rules.yml) to detect specific crypto usage in source code (e.g., md5(), password_hash(), openssl_encrypt()).
 
----
+
 
 ### **3. Intelligence & Reporting**
 
@@ -91,34 +90,25 @@ This parser takes all the scan results and turns them into clean, organized repo
   - **Risk_Register.xlsx**
   - **Risk_Assessment.xlsx**
 
----
+## 📚 Project Documentation
 
-## 📚 Table of Contents
-
-### **Project Documentation**
 - [Phase 1 — Discovery & Inventory](./content/phase_1.md) 
 - Phase 2 — SBOM/CBOM Deep Analysis  
 - Phase 3 — PQC Compatibility Evaluation (Planned)  
 - Phase 4 — Migration Planning & Roadmap (Planned)
 
-### **General Information**
-- About the Project  
-- Disclaimer  
-- Authors & Contributors  
-- License
 
----
 
 ## 👥 Authors & Contributors
 
 **Author:** Hussein Bin Mohamed - masta ghimau  
 **Contributor:** Mohd Saufy **PTPKM** (Output review, report validation)
 
----
+
 
 ## 📜 License
 
 Licensed under the **MIT License**.  
 You may use, modify, and distribute the project, as long as the original copyright notice is included.
 
----
+
