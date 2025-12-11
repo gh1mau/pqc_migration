@@ -101,10 +101,8 @@ This parser takes all the scan results and turns them into clean, organized repo
 
 ## 👥 Authors & Contributors
 
-**Author:** Hussein Bin Mohamed - masta ghimau  **Pejabat SUK Negeri Sembilan**
-**Contributor:** Muhammad Saufy Rohmad **PTPKM** (Output review, report validation)
-
-
+ - **Author:** Hussein Bin Mohamed - masta ghimau  **Pejabat SUK Negeri Sembilan**
+ - **Contributor:** Muhammad Saufy Rohmad **PTPKM** (Output review, report validation)
 
 ## 📜 License
 
