@@ -214,8 +214,11 @@ See the tool in action scanning a live environment.
 
 
 ### 📥 Download Sample Output
-Want to see the data structure before scanning? Download the sample CSV report below:
-[📄 **Download Sample Output (CSV)**](./sample/pqc_inventory_output.csv)
+
+Want to see the data structure before scanning? Download the sample CSV report below to review the column formats.
+
+👉 [**📄 Download Sample Output (CSV)**](./sample/pqc_inventory_output.csv)
+
 ---
 
 ## ✅ Tested On
@@ -230,6 +233,7 @@ The tool has been tested on the following environment:
 ## 🔍 VirusTotal Scan Results
 
 You can view the scan result for the compiled binary here: [VirusTotal Report](https://www.virustotal.com/gui/file/89f48cfc567e412a9e725c608f7dd3bdadd788c42f314a5bd430615c1922f946?nocache=1)
+
 
 
 
