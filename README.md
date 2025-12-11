@@ -3,7 +3,7 @@
 A practical and research-friendly toolkit built to help teams prepare for Post-Quantum Cryptography (PQC) migration.  
 The main goal of this project is to give you clear visibility of your cryptographic landscape. What algorithms you are using, where they live, and how ready they are for future PQC requirements.
 
-This toolkit was inspired by ideas and discussions from the **“Bengkel Migrasi Post-Quantum Cryptography (PQC) Tahun 2025 Siri 10”** organized by **NACSA** and **PTPKM(Pusat Teknologi dan Pengurusan Kriptologi Malaysia)**.
+This toolkit was inspired by the '**Bengkel Migrasi Post-Quantum Cryptography (PQC) Tahun 2025 Siri 10**'. The workshop was organized by **NACSA** and **PTPKM (Pusat Teknologi dan Pengurusan Kriptologi Malaysia)**, with participation from **Pejabat SUK Negeri Sembilan** and several Pejabat SUK Bahagian Utara.
 
 This project is **not official**, **not endorsed**, and **not affiliated** with these organizations.
 
@@ -101,8 +101,8 @@ This parser takes all the scan results and turns them into clean, organized repo
 
 ## 👥 Authors & Contributors
 
-**Author:** Hussein Bin Mohamed - masta ghimau  
-**Contributor:** Mohd Saufy **PTPKM** (Output review, report validation)
+**Author:** Hussein Bin Mohamed - masta ghimau  **Pejabat SUK Negeri Sembilan**
+**Contributor:** Muhammad Saufy Rohmad **PTPKM** (Output review, report validation)
 
 
 
