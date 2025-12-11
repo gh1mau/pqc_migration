@@ -7,6 +7,8 @@
 
 > Automated inventory scanning tool to detect exposed crypto-enabled services and assess migration readiness.
 
+[⬅ Return to Main Page](../README.md)
+
 ## 📡 Introduction
 
 Phase 1 uses an **"Outside-In"** approach. Before diving into source code or kernel configs, we first discover what is externally exposed. This phase identifies open network interfaces and the cryptographic protocols they are using.
@@ -14,7 +16,6 @@ Phase 1 uses an **"Outside-In"** approach. Before diving into source code or ker
 This initial inventory forms the foundation for all subsequent phases of migration or security assessment.
 
 ---
-
 
 ## 🔄 The Methodology (How It Works)
 
@@ -24,7 +25,7 @@ Phase 1 uses a structured, step-by-step discovery flow to minimize blind spots a
 
 You tell the tool where to look:
 
-- A **single IP** (e.g., a server or appliance), or  
+- A **single IP** (e.g., a server or appliance), or
 - A **subnet range** (e.g., an entire VLAN)
 
 You also assign a **Location/Owner tag** (e.g., “Server Room A”), which helps link assets to physical or logical context in later reporting.
@@ -60,26 +61,26 @@ This step reveals **what cryptography the service actually uses**, not just what
 #### **For SSH Services**
 The scanner collects:
 
-- Key Exchange (KEX) algorithms  
-- Host key types (RSA, ECDSA, ED25519)  
-- Supported ciphers and MACs  
+- Key Exchange (KEX) algorithms
+- Host key types (RSA, ECDSA, ED25519)
+- Supported ciphers and MACs
 
 SSH enumeration helps identify:
 
-- Legacy RSA-only systems  
-- Outdated MACs such as SHA1  
-- Hosts lacking modern crypto-agility  
+- Legacy RSA-only systems
+- Outdated MACs such as SHA1
+- Hosts lacking modern crypto-agility
 
 #### **For TLS/SSL Services**
 If `testssl.sh` is available, a real handshake is performed to identify:
 
-- TLS versions (TLS 1.0 → TLS 1.3)  
-- Supported cipher suites  
+- TLS versions (TLS 1.0 → TLS 1.3)
+- Supported cipher suites
 - Presence of strong or weak primitives:
-  - AES-GCM  
-  - ChaCha20  
-  - ECDHE  
-  - Deprecated: RC4, 3DES, MD5  
+  - AES-GCM
+  - ChaCha20
+  - ECDHE
+  - Deprecated: RC4, 3DES, MD5
 
 If TestSSL is missing, the scanner falls back to Nmap’s SSL scripts.
 
@@ -87,8 +88,8 @@ If TestSSL is missing, the scanner falls back to Nmap’s SSL scripts.
 
 Each service receives a preliminary PQC-readiness rating:
 
-| Level | Meaning | Indicators |
-|-------|---------|------------|
+| Readiness Level | Meaning | Indicators |
+|-----------------|---------|------------|
 | **High** | Good posture | TLS 1.3, ED25519, modern OpenSSH |
 | **Medium** | Acceptable | TLS 1.2, RSA/ECDHE |
 | **Low** | Needs attention | RC4, SSLv3, SHA1, outdated SSH |
@@ -126,32 +127,30 @@ graph TD
 
 ## 📊 Data Dictionary: What the Data Means
 
-The tool generates a CSV file (`pqc_inventory_output.csv`) that can be directly used for initial inventory.  
+The tool generates a CSV file (`pqc_inventory_output.csv`) that can be directly used for initial inventory.
 Below is the description of each column:
 
-| Column Name                   | Description |
-|--------------------------------|-------------|
-| **Asset Type**                 | Type of asset (e.g., Application Stack, Operating System). The scanner infers this from the port scanned (e.g., Port 22 → OS/Application). |
-| **Asset Name / Identifier**    | Unique ID for the asset. Combines IP Address, Service Name, and Software Version. Example: `10.10.10.7 - ssh (OpenSSH 8.9p1 Ubuntu)` |
-| **Location / Owner**           | Physical location of the asset (e.g., "Pusat Data Kg. Ismail"). Provided by the user during scan. |
+| Column Name | Description |
+|---|---|
+| **Asset Type** | Type of asset (e.g., Application Stack, Operating System). The scanner infers this from the port scanned (e.g., Port 22 → OS/Application). |
+| **Asset Name / Identifier** | Unique ID for the asset. Combines IP Address, Service Name, and Software Version. Example: `10.10.10.7 - ssh (OpenSSH 8.9p1 Ubuntu)` |
+| **Location / Owner** | Physical location of the asset (e.g., "Pusat Data Kg. Ismail"). Provided by the user during scan. |
 | **Cryptographic Functionality Present?** | Yes/No. Since the tool only scans crypto-enabled ports (22, 443, etc.), this is usually "Yes". |
 | **Examples of Algorithms Used** | Cryptographic algorithms detected during handshake. Example: RSA, ECDHE, AES-GCM. |
-| **SBOM/CBOM Available?**       | Default `No`. Indicates whether a deeper SBOM/CBOM scan has been done (Phase 2). |
-| **Migration Readiness Level**  | Automated assessment of migration readiness (Low, Medium, High). For example, presence of RC4 → Low. |
-| **Notes / Action Items**       | Recommendations or observations from the scanner. Example: "TLS Service detected. Deep scan recommended with testssl.sh." |
+| **SBOM/CBOM Available?** | Default `No`. Indicates whether a deeper SBOM/CBOM scan has been done (Phase 2). |
+| **Migration Readiness Level** | Automated assessment of migration readiness (Low, Medium, High). For example, presence of RC4 → Low. |
+| **Notes / Action Items** | Recommendations or observations from the scanner. Example: "TLS Service detected. Deep scan recommended with `testssl.sh.`" |
 
 ---
 
 ## 🛠️ How to Use the Tool
 
-The `pqc_scanner_phase1 tool` is a wrapper for powerful scanners like Nmap and TestSSL. It handles all the complex commands for you.
-
+The `pqc_scanner_phase1` tool is a wrapper for powerful scanners like Nmap and TestSSL. It handles all the complex commands for you.
 
 ### Prerequisites
 
-- You need a Linux environment with `nmap` installed.
+- A Linux environment (Ubuntu/Debian recommended).
 - Nmap installed (`sudo apt install nmap`).
-
 
 ### 1. Basic Usage
 
@@ -161,22 +160,22 @@ Run the script with `sudo` (root is needed for accurate OS fingerprinting).
 
 ```bash
 sudo chmod +x pqc_scanner_phase1
-sudo ./pqc_scanner_phase1 
+sudo ./pqc_scanner_phase1
 ```
 
 ### 2. Command Options & Examples
 
-| Scenario             | Command |
-|---------------------|---------|
+| Scenario | Command |
+|---|---|
 | Scan a Single Server | `sudo ./pqc_scanner_phase1 192.168.1.50 "Server Room A"` |
-| Scan a Whole Subnet  | `sudo ./pqc_scanner_phase1 10.55.0.0/24 "Pusat Data Kg Ismail"` |
+| Scan a Whole Subnet | `sudo ./pqc_scanner_phase1 10.55.0.0/24 "Pusat Data Kg Ismail"` |
 
 ---
 
 ## 📸 Screenshots & Proof of Concept
 
 ### 1. Scanning in Progress
-The tool displays a clean status dashboard, hiding the messy Nmap output behind the scenes.  
+The tool displays a clean status dashboard, hiding the messy Nmap output behind the scenes.
 
 ![Phase 1 Scan Screenshot](./img/phase1_sc1.png)
 
@@ -187,18 +186,16 @@ The tool displays a clean status dashboard, hiding the messy Nmap output behind 
 *Figure 2: Example of Phase 1 scanning single target.*
 
 ### 2. Final Output
-A success message indicating the CSV generation is complete.  
+A success message indicating the CSV generation is complete.
 
 ![Phase 1 Scan Screenshot](./img/phase1_sc3.png)
 
 *Figure 3: After the scan completes, the tool generates the output file **pqc_inventory_output.csv** inside the `reports/` directory. The folder also contains `x.x.x.x_live_hosts.txt`, which lists all discovered live hosts.*
 
-
-
 ### 3. Video Demo
-See the tool in action scanning a live environment.  
+See the tool in action scanning a live environment.
 
-poc1
+*(Video Demo Coming Soon)*
 
 ---
 
@@ -215,23 +212,4 @@ The tool has been tested on the following environment:
 
 You can view the scan result for the compiled binary here: [VirusTotal Report](https://www.virustotal.com/gui/file/89f48cfc567e412a9e725c608f7dd3bdadd788c42f314a5bd430615c1922f946?nocache=1)
 
-
-
-
 [Return to Top](#)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
