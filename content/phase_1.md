@@ -143,6 +143,18 @@ Below is the description of each column:
 
 ---
 
+## 📂 Tools & Directory Structure
+
+To run the scan, you will need to navigate to the `tools/inventory` directory. The structure is organized as follows:
+
+```text
+tools/
+└── inventory/
+    ├── pqc_scanner_phase1      # 🚀 The main executable script
+    ├── logs/                   # Logs are saved here automatically
+    ├── reports/                # Final CSV reports are saved here
+    └── testssl.sh/             # Integrated TestSSL module
+
 ## 🛠️ How to Use the Tool
 
 The `pqc_scanner_phase1` tool is a wrapper for powerful scanners like Nmap and TestSSL. It handles all the complex commands for you.
@@ -213,6 +225,7 @@ The tool has been tested on the following environment:
 ## 🔍 VirusTotal Scan Results
 
 You can view the scan result for the compiled binary here: [VirusTotal Report](https://www.virustotal.com/gui/file/89f48cfc567e412a9e725c608f7dd3bdadd788c42f314a5bd430615c1922f946?nocache=1)
+
 
 
 
