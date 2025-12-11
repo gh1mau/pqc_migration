@@ -195,7 +195,9 @@ A success message indicating the CSV generation is complete.
 ### 3. Video Demo
 See the tool in action scanning a live environment.
 
-![Video Demo Phase 1](./img/phase1.mp4)
+<video src="https://github.com/user-attachments/assets/a0909cd0-f362-4281-80c9-6afc3d1aa523
+" controls="controls" style="max-width: 100%;">
+</video>
 
 ---
 
@@ -211,6 +213,7 @@ The tool has been tested on the following environment:
 ## 🔍 VirusTotal Scan Results
 
 You can view the scan result for the compiled binary here: [VirusTotal Report](https://www.virustotal.com/gui/file/89f48cfc567e412a9e725c608f7dd3bdadd788c42f314a5bd430615c1922f946?nocache=1)
+
 
 
 
