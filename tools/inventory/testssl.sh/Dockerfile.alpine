@@ -1,0 +1,35 @@
+# syntax=docker.io/docker/dockerfile:1
+
+FROM alpine:3.21 AS base-alpine
+RUN <<HEREDOC
+  apk add --no-cache bash procps drill coreutils libidn curl socat openssl xxd
+
+  # Add a non-root user `testssl`, this is roughly equivalent to the `adduser` command:
+  # addgroup testssl && adduser -G testssl -g "testssl user" -s /bin/bash -D testssl
+  echo 'testssl:x:1000:1000::/home/testssl:/bin/bash' >> /etc/passwd
+  echo 'testssl:x:1000:' >> /etc/group
+  echo 'testssl:!::0:::::' >> /etc/shadow
+  install --mode 2755 --owner testssl --group testssl --directory /home/testssl
+
+  # A copy of `testssl.sh` will be added to the home directory,
+  # symlink to that file so it can be treated as a command:
+  ln -s /home/testssl/testssl.sh /usr/local/bin/testssl.sh
+HEREDOC
+
+# Runtime config:
+USER testssl
+ENTRYPOINT ["testssl.sh"]
+CMD ["--help"]
+
+# Final image stage (add `testssl.sh` project files)
+# Choose either one as the final stage (defaults to the last stage, `dist-local`)
+
+# 35MB Image (Remote repo clone, cannot filter content through `.dockerignore`):
+FROM base-alpine AS dist-git
+ARG GIT_URL=https://github.com/testssl/testssl.sh.git
+ARG GIT_BRANCH
+ADD --chown=testssl:testssl ${GIT_URL}#${GIT_BRANCH?branch-required} /home/testssl
+
+# 27MB Image (Local repo copy from build context, uses `.dockerignore`):
+FROM base-alpine AS dist-local
+COPY --chown=testssl:testssl . /home/testssl/
