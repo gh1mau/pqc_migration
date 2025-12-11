@@ -1,4 +1,3 @@
-<a name="top"></a>
 # 🛡️ Phase 1: Discovery & Inventory
 
 ![Phase 1](https://img.shields.io/badge/Phase-1-4caf50)
@@ -213,5 +212,6 @@ The tool has been tested on the following environment:
 
 You can view the scan result for the compiled binary here: [VirusTotal Report](https://www.virustotal.com/gui/file/89f48cfc567e412a9e725c608f7dd3bdadd788c42f314a5bd430615c1922f946?nocache=1)
 
-[Return to Top](#)
+
+
 
