@@ -53,8 +53,9 @@ This script acts as your network scout. It scans your network to map out all act
 - Scans for SSH, TLS/SSL, RDP, and other crypto-heavy services  
 - Uses Nmap and TestSSL to detect versions and algorithms  
 - Performs live handshakes to collect cipher and key exchange details  
-- Generates an easy-to-read Inventory CSV ready for reporting.
+- Generates an easy-to-read Inventory CSV ready for reporting (based on **NACSA** and **PTPKM** `BUKUKERJA_BENGKEL MIGRASI PQC 2025` excel template).
 
+👉 [**📄 Download Sample Inventory Output (CSV)**](./content/sample/pqc_inventory_output.csv)
 
 
 ### **2. Deep Dive Analysis (Phase 2)**  
