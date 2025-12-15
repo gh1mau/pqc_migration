@@ -1,0 +1,3 @@
+Asset Type,Asset Name / Identifier,Location / Owner,Cryptographic Functionality Present?,Examples of Algorithms Used,SBOM/CBOM Available?,Migration Readiness Level,Notes / Action Items
+Application Stack,192.168.0.113 - ssh (Unknown Version),Pusat Data Kg. Ismail,Yes,"RSA, ECDSA, ED25519 (Potential)",No,Medium,SSH Service. Check for weak KEX/Macs.
+Application Stack,192.168.0.113 - ssl|http (Unknown Version),Pusat Data Kg. Ismail,Yes,"RSA,ECDHE,AES,ChaCha20",No,Medium,TLS Service. Active scan performed.
