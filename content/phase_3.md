@@ -1,6 +1,6 @@
 # 🧠 Phase 3: Intelligence & Reporting
 
-![Phase 3](https://img.shields.io/badge/Phase_3-Risk_Analysis-blueviolet)
+![Phase 3](https://img.shields.io/badge/Phase_3-Reporting-blueviolet)
 ![Status](https://img.shields.io/badge/Status-Stable-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
