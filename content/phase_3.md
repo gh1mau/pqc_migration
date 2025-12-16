@@ -346,7 +346,7 @@ Upon success, the tool confirms the generation of the 4 Excel artifacts in the d
 ## 🎥 Video Demo
 Watch the full reporting process in action:
 
-<video src="https://github.com/user-attachments/assets/placeholder-video-link" controls="controls" style="max-width: 100%;">
+<video src="https://github.com/user-attachments/assets/60fbf478-dbff-4feb-a2bf-a7b17b63236e" controls="controls" style="max-width: 100%;">
 </video>
 
 
@@ -367,13 +367,12 @@ While the `pqc_parser.exe` automates the heavy lifting, professional verificatio
 > 3.  Once verified, the final data **MUST BE COPIED MANUALLY** into the official master document:
 >     **`BUKUKERJA_BENGKEL MIGRASI PQC 2025`**
 
----
+
 
 ## ✅ Verified Environment
 The binary has been compiled and tested on:
 * **Microsoft Windows 11**
 
----
 
 ## 🔍 VirusTotal & Security Note
 Some antivirus vendors may flag `pqc_parser.exe` as a False Positive.
@@ -383,7 +382,7 @@ Some antivirus vendors may flag `pqc_parser.exe` as a False Positive.
 
 [**📄 View VirusTotal Scan Result**](https://www.virustotal.com/gui/file/403338e6cda33f7a9f4f9764c35facecc2a1e430dea246ed37d70978b83724e9/detection) 
 
----
+
 
 ## 📝 Roadmap / To-Do List
 
