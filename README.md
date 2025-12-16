@@ -59,7 +59,7 @@ This script acts as your network scout. It scans your network to map out all act
 
 
 ### **2. Deep Dive Analysis (Phase 2)**  
-**Tool:** `scan_pqc_phase_2.sh`  
+**Tool:** `pqc_scanner_phase2`  
 After identifying key assets, this phase provides a detailed analysis of the system or codebase. It combines several powerful engines:
 
 **What it does:**
