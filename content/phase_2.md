@@ -264,5 +264,5 @@ You can view the scan result for the compiled binary (`pqc_scanner_phase2`) here
 
 ## 📝 Todo List / Future Roadmap
 
-- [ ] **Windows OS Support:** Develop native support for Windows environments (currently relies on WSL/Linux).
+- [ ] **Windows OS Support:** Develop native support for Windows environments.
 - [ ] **Smart Path Detection:** Improve the scanner to trigger an **interactive prompt** if no source code is found in the default `/var/www` directory (currently defaults to scanning this specific path for PHP).
