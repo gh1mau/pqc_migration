@@ -1,0 +1,151 @@
+rules:
+# ==============================================================================
+# Hussein bin Mohamed | masta ghimau
+# ==============================================================================
+
+  - id: pqc-php-weak-hash
+    patterns:
+      - pattern-either:
+          - pattern: md5(...)
+          - pattern: sha1(...)
+    message: "PQC CBOM Finding (Crypto-Agility=No): Penggunaan 'weak hash' (MD5/SHA1) yang terdedah PQC ditemui. Fungsi ini di-hardcode dalam kod sumber."
+    languages: [php]
+    severity: ERROR
+    metadata:
+      vulnerability: "Weak Hash (MD5/SHA1)"
+      pqc_risk: "High"
+      crypto_agility: "No"
+      algorithm-name: "MD5/SHA1"
+      algorithm-type: "Hashing"
+      purpose: "Hashing"
+
+  - id: pqc-php-legacy-mcrypt
+    patterns:
+      - pattern-either:
+          - pattern: mcrypt_encrypt(...)
+          - pattern: mcrypt_decrypt(...)
+    message: "PQC CBOM Finding (Crypto-Agility=No): Penggunaan 'mcrypt' yang telah lapuk (deprecated) dan terdedah ditemui. Fungsi ini di-hardcode."
+    languages: [php]
+    severity: ERROR
+    metadata:
+      vulnerability: "Legacy Mcrypt Library"
+      pqc_risk: "High"
+      crypto_agility: "No"
+      algorithm-name: "mcrypt"
+      algorithm-type: "Encryption/Decryption"
+      purpose: "Encryption"
+
+  - id: pqc-php-openssl-weak-cipher
+    patterns:
+      - pattern-either:
+          - pattern: openssl_encrypt(..., "des-cbc", ...)
+          - pattern: openssl_encrypt(..., "des-ede3-cbc", ...)
+          - pattern: openssl_encrypt(..., "rc2-cbc", ...)
+          - pattern: openssl_encrypt(..., "rc4", ...)
+          - pattern: openssl_encrypt(..., "bf-cbc", ...)
+    message: "PQC CBOM Finding (Crypto-Agility=No): Penggunaan 'openssl_encrypt' dengan cipher lapuk (cth: DES, RC2, RC4, Blowfish) yang terdedah ditemui. Fungsi ini di-hardcode."
+    languages: [php]
+    severity: ERROR
+    metadata:
+      vulnerability: "Hardcoded Weak Cipher (openssl_encrypt)"
+      pqc_risk: "High"
+      crypto_agility: "No"
+      algorithm-name: "DES/RC2/RC4/Blowfish"
+      algorithm-type: "Encryption/Decryption"
+      purpose: "Encryption"
+
+  - id: pqc-php-crypt-blowfish
+    patterns:
+      - pattern-either:
+          - pattern: crypt(...)
+          - pattern: CRYPT_BLOWFISH
+    message: "PQC CBOM Finding (Crypto-Agility=No): Penggunaan 'crypt()' atau pemalar 'CRYPT_BLOWFISH' ditemui. Ini menunjukkan 'hashing' kata laluan (bcrypt) yang di-hardcode dan bukan PQC-compliant."
+    languages: [php]
+    severity: ERROR
+    metadata:
+      vulnerability: "Hardcoded Hashing (crypt()/Blowfish)"
+      pqc_risk: "High"
+      crypto_agility: "No"
+      algorithm-name: "crypt() / bcrypt (Blowfish)"
+      algorithm-type: "Hashing"
+      purpose: "Password Hashing"
+
+# --- PERATURAN PASSWORD_HASH (BAHARU) ---
+
+  - id: pqc-php-password-hash-bcrypt
+    patterns:
+      - pattern: password_hash(..., PASSWORD_BCRYPT, ...)
+    message: "PQC CBOM Finding (Crypto-Agility=No): Penggunaan 'password_hash' dengan 'PASSWORD_BCRYPT' memaksa penggunaan algoritma Blowfish. Ia di-hardcode dan tidak menyokong peralihan mudah ke algoritma moden (seperti Argon2id) atau PQC."
+    languages: [php]
+    severity: ERROR
+    metadata:
+      vulnerability: "Hardcoded Legacy Hashing (Bcrypt)"
+      pqc_risk: "High"
+      crypto_agility: "No"
+      algorithm-name: "Bcrypt (Blowfish)"
+      algorithm-type: "Hashing"
+      purpose: "Password Hashing"
+
+  - id: pqc-php-password-hash-default
+    patterns:
+      - pattern: password_hash(..., PASSWORD_DEFAULT, ...)
+    message: "PQC CBOM Finding (Crypto-Agility=Low): Penggunaan 'PASSWORD_DEFAULT' mungkin berubah mengikut versi PHP, tetapi selalunya kekal pada Bcrypt untuk tempoh yang lama. Disarankan semakan untuk memastikan kesediaan migrasi ke Argon2 atau algoritma PQC."
+    languages: [php]
+    severity: WARNING
+    metadata:
+      vulnerability: "Implicit Hashing Algorithm"
+      pqc_risk: "Medium"
+      crypto_agility: "Low"
+      algorithm-name: "Default (Usually Bcrypt)"
+      algorithm-type: "Hashing"
+      purpose: "Password Hashing"
+
+  - id: pqc-js-weak-hash-node
+    patterns:
+      - pattern-either:
+          - pattern: crypto.createHash('md5')
+          - pattern: crypto.createHash('sha1')
+    message: "PQC CBOM Finding (Crypto-Agility=No): [Node.js] Penggunaan 'crypto.createHash' (MD5/SHA1) yang terdedah PQC ditemui."
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      vulnerability: "Weak Hash (MD5/SHA1)"
+      pqc_risk: "High"
+      crypto_agility: "No"
+      algorithm-name: "MD5/SHA1"
+      algorithm-type: "Hashing"
+      purpose: "Hashing"
+
+  - id: pqc-js-weak-cipher-node
+    patterns:
+      - pattern-either:
+          - pattern: crypto.createCipheriv('des', ...)
+          - pattern: crypto.createCipheriv('des-cbc', ...)
+          - pattern: crypto.createCipheriv('rc4', ...)
+          - pattern: crypto.createCipheriv('bf-cbc', ...)
+    message: "PQC CBOM Finding (Crypto-Agility=No): [Node.js] Penggunaan 'crypto.createCipheriv' dengan cipher lapuk (cth: DES, RC4, BF) ditemui."
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      vulnerability: "Hardcoded Weak Cipher (Node.js)"
+      pqc_risk: "High"
+      crypto_agility: "No"
+      algorithm-name: "DES/RC4/BF"
+      algorithm-type: "Encryption/Decryption"
+      purpose: "Encryption"
+
+  - id: pqc-js-weak-hash-cryptojs
+    patterns:
+      - pattern-either:
+          - pattern: CryptoJS.MD5(...)
+          - pattern: CryptoJS.SHA1(...)
+    message: "PQC CBOM Finding (Crypto-Agility=No): [CryptoJS] Penggunaan 'CryptoJS.MD5' atau 'CryptoJS.SHA1' yang terdedah PQC ditemui."
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      vulnerability: "Weak Hash (MD5/SHA1)"
+      pqc_risk: "High"
+      crypto_agility: "No"
+      algorithm-name: "MD5/SHA1"
+      algorithm-type: "Hashing"
+      purpose: "Hashing"
