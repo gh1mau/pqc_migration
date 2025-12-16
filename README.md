@@ -92,7 +92,7 @@ This parser takes all the scan results and turns them into clean, organized repo
   - **pqc_risk_register.xlsx**
   - **pqc_risk_assessment.xlsx**
 
-[**📄 Download Sample Excel Reports (ZIP)**](./sample/final_report.zip)
+[**📄 Download Sample Excel Reports (ZIP)**](./content/sample/final_report.zip)
 
 ## 📚 Project Documentation
 
