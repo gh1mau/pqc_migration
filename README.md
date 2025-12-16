@@ -72,7 +72,7 @@ After identifying key assets, this phase provides a detailed analysis of the sys
 [**📄 Download Sample Output (ZIP)**](./content/sample/report.zip)
 
 
-### **3. Intelligence & Reporting**
+### [**3. Intelligence & Reporting**](./content/phase_3.md)  
 
 **Tool:** `pqc_parser.exe`
 
