@@ -74,7 +74,7 @@ After identifying key assets, this phase provides a detailed analysis of the sys
 
 ### **3. Intelligence & Reporting**
 
-**Tool:** `parser.exe`
+**Tool:** `pqc_parser.exe`
 
 Raw JSON output is useful for machines, but not exactly fun to read.  
 This parser takes all the scan results and turns them into clean, organized reports that you can actually use for decision-making.
@@ -87,17 +87,19 @@ This parser takes all the scan results and turns them into clean, organized repo
 - Calculates PQC-related risk scores and highlights low crypto-agility areas (like hardcoded algorithms)
 - Helps you see the “story” behind the data instead of just raw numbers
 - Generates the following ready-to-use Excel files:
-  - **SBOM.xlsx**
-  - **CBOM.xlsx**
-  - **Risk_Register.xlsx**
-  - **Risk_Assessment.xlsx**
+  - **pqc_sbom.xlsx**
+  - **pqc_cbom.xlsx**
+  - **pqc_risk_register.xlsx**
+  - **pqc_risk_assessment.xlsx**
+
+[**📄 Download Sample Excel Reports (ZIP)**](./sample/final_report.zip)
 
 ## 📚 Project Documentation
 
 - [Phase 1 — Discovery & Inventory](./content/phase_1.md) 
 - [Phase 2 — SBOM/CBOM Deep Analysis](./content/phase_2.md)   
-- Phase 3 — Intelligence & Reporting  
-- Phase 4 — Migration Planning & Roadmap (Planned)
+- [Phase 3 — Intelligence & Reporting](./content/phase_3.md)   
+- Phase 4 — Migration Planning & Roadmap (Coming Soon)
 
 
 
