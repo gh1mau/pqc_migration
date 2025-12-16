@@ -279,5 +279,112 @@ graph TD
     %% Styling
     style Server fill:#ffebee,stroke:#ef5350,stroke-width:2px
     style Laptop fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
-    ```
+```
+---
+## 📂 Tools & Directory Structure
 
+Ensure your directory is organized as follows before running the parser. The tool expects the JSON input files to be in the same directory as the executable (or accessible via path).
+
+```text
+tools/
+└── reporting/
+    ├── pqc_parser.exe                # The Analysis Engine (Binary)
+    ├── system_report.json            # OS-level scan result (need to add manually)
+    ├── sbom.syft.wordpress.json      # Software inventory (Syft) (need to add manually)
+    ├── app_cbom.wordpress.json       # Cryptography map (Semgrep) (need to add manually)
+    └── vuln_grype.wordpress.json     # Vulnerability data (Grype) (need to add manually)
+```
+
+## 🛠️ Usage Guide
+
+This tool is designed to run natively on **Windows**. It uses a Command Line Interface (CLI) for precision and automation capability.
+
+### 1. View Help Menu
+By default, running the tool without arguments will display the help menu and available options.
+
+```cmd
+pqc_parser.exe
+```
+
+### 2. Run Full Analysis
+To generate all four reports (SBOM, CBOM, Risk Register, Risk Assessment), use the `all` command followed by the input filenames.
+
+**Command Syntax:**
+```cmd
+pqc_parser.exe all --os system_report.json --code-sbom sbom.syft.wordpress.json --code-cbom app_cbom.wordpress.json --vuln vuln_grype.wordpress.json
+```
+
+**Parameters Explained:**
+* **`--os`**: Path to the Operating System scan result.
+* **`--code-sbom`**: Path to the Software Inventory file.
+* **`--code-cbom`**: Path to the Cryptographic Inventory file.
+* **`--vuln`**: Path to the Vulnerability scan file.
+---
+## 📸 Screenshots
+
+### 1. Initialization (Help Menu)
+Running the tool without arguments displays the enterprise banner and help instructions.
+
+![Initialization Screen](./img/phase3_sc1.png)
+*Figure 1: The Enterprise UI showing version information and command usage.*
+
+### 2. Analysis in Progress
+Once executed, the tool performs a deep scan. Visual progress bars indicate the status of data correlation and risk mapping.
+
+![Analysis Progress](./img/phase3_sc2.png)
+*Figure 2: Real-time analysis of OS, SBOM, and CBOM data with visual progress indicators.*
+
+### 3. Completion & Output
+Upon success, the tool confirms the generation of the 4 Excel artifacts in the directory.
+
+![Completion Screen](./img/phase3_sc3.png)
+*Figure 3: Successful generation of all intelligence reports and summary of output files.*
+
+
+
+## 🎥 Video Demo
+Watch the full reporting process in action:
+
+<video src="https://github.com/user-attachments/assets/placeholder-video-link" controls="controls" style="max-width: 100%;">
+</video>
+
+
+
+## 📥 Download Sample Reports
+Want to review the actual data structure and the level of detail provided in the reports? Download the complete package of generated Excel artifacts below.
+
+[**📄 Download Sample Excel Reports (ZIP)**](./sample/final_report.zip)
+
+---
+## ⚠️ Manual Verification Required
+
+While the `pqc_parser.exe` automates the heavy lifting, professional verification is mandatory.
+
+> **🛑 ACTION REQUIRED:**
+> 1.  The generated Excel files contain **Empty Fields** (e.g., "System Owner", "Business Criticality", "Budget Allocation").
+> 2.  The **System Owner** must manually verify the data and fill in these gaps.
+> 3.  Once verified, the final data **MUST BE COPIED MANUALLY** into the official master document:
+>     **`BUKUKERJA_BENGKEL MIGRASI PQC 2025`**
+
+---
+
+## ✅ Verified Environment
+The binary has been compiled and tested on:
+* **Microsoft Windows 11**
+
+---
+
+## 🔍 VirusTotal & Security Note
+Some antivirus vendors may flag `pqc_parser.exe` as a False Positive.
+
+* **Reason:** This binary is compiled using **Nuitka**  and packed to run as a standalone `.exe`. Heuristic scanners often flag packed binaries that do not have a digital signature.
+* **Status:** **Safe**. This is a custom-built internal tool, not malware.
+
+[**📄 View VirusTotal Scan Result**](https://www.virustotal.com/gui/file/403338e6cda33f7a9f4f9764c35facecc2a1e430dea246ed37d70978b83724e9/detection) 
+
+---
+
+## 📝 Roadmap / To-Do List
+
+- [ ] **Dashboard Support:** JSON export option for integration with visualization tools (e.g., Kibana).
+- [ ] **Digital Signature:** Sign the `.exe` binary to prevent antivirus false positives in the future.
