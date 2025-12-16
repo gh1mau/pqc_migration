@@ -204,7 +204,7 @@ This document provides a detailed breakdown of the fields contained within the f
 | **Risiko** | Risk Description. | 🤖 **Logic:** `PQC Vulnerability: [Risk Desc]` |
 | **Pemilik Risiko** | Person responsible. | 🤖 **Default:** "IT Security Team" |
 
----
+
 
 ## 4. 🛡️ Risk Assessment (`pqc_risk_assessment.xlsx`)
 **Purpose:** Detailed technical risk scoring and mitigation planning.
