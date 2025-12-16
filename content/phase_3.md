@@ -338,6 +338,7 @@ Once executed, the tool performs a deep scan. Visual progress bars indicate the 
 Upon success, the tool confirms the generation of the 4 Excel artifacts in the directory.
 
 ![Completion Screen](./img/phase3_sc3.png)
+
 *Figure 3: Successful generation of all intelligence reports and summary of output files.*
 
 
