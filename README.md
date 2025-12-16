@@ -74,7 +74,7 @@ After identifying key assets, this phase provides a detailed analysis of the sys
 
 ### **3. Intelligence & Reporting**
 
-**Tool:** `parser.py`
+**Tool:** `parser.exe`
 
 Raw JSON output is useful for machines, but not exactly fun to read.  
 This parser takes all the scan results and turns them into clean, organized reports that you can actually use for decision-making.
@@ -96,7 +96,7 @@ This parser takes all the scan results and turns them into clean, organized repo
 
 - [Phase 1 — Discovery & Inventory](./content/phase_1.md) 
 - [Phase 2 — SBOM/CBOM Deep Analysis](./content/phase_2.md)   
-- Phase 3 — PQC Compatibility Evaluation (Planned)  
+- Phase 3 — Intelligence & Reporting  
 - Phase 4 — Migration Planning & Roadmap (Planned)
 
 
