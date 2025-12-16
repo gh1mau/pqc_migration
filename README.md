@@ -58,7 +58,7 @@ This script acts as your network scout. It scans your network to map out all act
 📄 [**Download Sample Inventory Output (CSV)**](./content/sample/pqc_inventory_output.csv)
 
 
-### **2. Deep Dive Analysis (Phase 2)**  
+### [**2. Deep Dive Analysis (Phase 2)**](./content/phase_2.md)   
 **Tool:** `pqc_scanner_phase2`  
 After identifying key assets, this phase provides a detailed analysis of the system or codebase. It combines several powerful engines:
 
@@ -94,7 +94,7 @@ This parser takes all the scan results and turns them into clean, organized repo
 ## 📚 Project Documentation
 
 - [Phase 1 — Discovery & Inventory](./content/phase_1.md) 
-- Phase 2 — SBOM/CBOM Deep Analysis  
+- [Phase 2 — SBOM/CBOM Deep Analysis](./content/phase_2.md)   
 - Phase 3 — PQC Compatibility Evaluation (Planned)  
 - Phase 4 — Migration Planning & Roadmap (Planned)
 
