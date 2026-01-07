@@ -257,6 +257,7 @@ The tool has been verified and tested on the following environment:
 - Ubuntu 24.04.2 LTS
 - Ubuntu 22.04 LTS
 - Ubuntu 22.04.5 LTS
+- CentOS Linux 7 (Core)
 ```
 ## 🔍 VirusTotal Scan Results
 
